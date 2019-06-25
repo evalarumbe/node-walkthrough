@@ -7,3 +7,10 @@ const removeWhitespace = input => {
 
     console.log(result);
 }
+
+const capitalizeInitial = input => {
+    // for tomorrow :)
+    console.log(input);
+}
+
+capitalizeInitial("here's a test");
