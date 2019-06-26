@@ -1,3 +1,13 @@
+exports.prepareString = input => {
+    let result = removeWhitespace(input);
+    let tmpArray = result.split(' ');
+
+    tmpArray = tmpArray.map(el => capitalizeInitial(el));
+    result = tmpArray.join('_');
+
+    return result;
+}
+
 const removeWhitespace = input => {
     // trim space off the ends
     let result = input.trim();
@@ -5,12 +15,10 @@ const removeWhitespace = input => {
     // collapse duplicate spaces
     result = result.replace(/\s+/g, ' ');
 
-    console.log(result);
+    return result;
 }
 
 const capitalizeInitial = input => {
-    // for tomorrow :)
-    console.log(input);
+    let result = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    return result;
 }
-
-capitalizeInitial("here's a test");
